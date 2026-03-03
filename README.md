@@ -1,6 +1,6 @@
 # smolagents-capsule
 
-[Capsule](https://github.com/mavdol/capsule) integration for [smolagents](https://github.com/huggingface/smolagents).
+Capsule integration for smolagents
 
 ## What is this?
 
@@ -30,20 +30,6 @@ print(result)  # "2"
 js_tool = CapsuleJSTool()
 result = js_tool.forward("1 + 2")
 print(result)  # "3"
-```
-
-### With a smolagents agent
-
-```python
-from smolagents import CodeAgent, HfApiModel
-from smolagents_capsule import CapsulePythonTool, CapsuleJSTool
-
-agent = CodeAgent(
-    tools=[CapsulePythonTool(), CapsuleJSTool()],
-    model=HfApiModel(),
-)
-
-agent.run("Calculate the factorial of 10 using the python sandbox")
 ```
 
 ## Check our main repo
