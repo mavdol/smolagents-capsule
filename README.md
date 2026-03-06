@@ -32,8 +32,6 @@ result = js_tool.forward("1 + 2")
 print(result)  # "3"
 ```
 
-## Check our main repo
-
 Visit [Capsule](https://github.com/mavdol/capsule) repository for more information.
 
 ## License
