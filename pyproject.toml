@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "smolagents-capsule"
-version = "0.1.0"
+version = "0.1.1"
 description = "Capsule sandbox integration for smolagents — run code in isolated WebAssembly sandboxes"
 license = { text = "MIT" }
 readme = "README.md"
