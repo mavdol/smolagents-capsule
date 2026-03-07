@@ -35,6 +35,8 @@ def execute_code(code: str):
     if output:
         return output + str(result)
 
+    return result
+
 @task(name="main", compute="HIGH")
 def main(code: str):
     response = execute_code(code)
