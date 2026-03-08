@@ -45,14 +45,27 @@ json.dumps(data)
     assert '"hello"' in result
     assert '"world"' in result
 
+def test_python_print_output():
+    code = """
+print("Hello")
+print("World")
+print("Test")
+42
+"""
+    result = CapsulePythonTool().forward(code)
+    assert "Hello" in result
+    assert "World" in result
+    assert "Test" in result
+    assert "42" in result
 
 # ---- Python : Errors test ----
 def test_python_syntax_error():
     with pytest.raises(Exception, match="was never closed"):
         CapsulePythonTool().forward("def broken(")
 
+
 def test_python_runtime_error():
-    with pytest.raises(Exception, match="division by zero"):
+    with pytest.raises(Exception, match="division by zero") as exc_info:
         CapsulePythonTool().forward("1 / 0")
 
 def test_python_name_error():
@@ -101,6 +114,18 @@ JSON.stringify(data)
     assert "hello" in result
     assert "world" in result
 
+def test_js_console_output():
+    code = """
+console.log("Hello");
+console.log("World");
+console.log("Test");
+42
+"""
+    result = CapsuleJSTool().forward(code)
+    assert "Hello" in result
+    assert "World" in result
+    assert "Test" in result
+    assert "42" in result
 
 # ---- JavaScript : Errors test ----
 def test_js_syntax_error():
