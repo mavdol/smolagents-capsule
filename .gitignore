@@ -209,4 +209,7 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-*.wasm
+# Node.js (temporary files created during CI build)
+node_modules/
+package.json
+package-lock.json
